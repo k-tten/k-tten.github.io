@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+
+    overflow-x: hidden;
+
+    overscroll-behavior: none;
+
+    background-color: #020104;
+}
+
+body {
+    height: 100%;
+}
+
+#name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+console.log([...document.querySelectorAll("#name path")].map((e, i, a) => {
+    return (`
+#name path:nth-child(${i + 1}) {
+    stroke-dasharray: ${e.getTotalLength()};
+    stroke-dashoffset: ${e.getTotalLength()};
+    animation: construct 1s ${(a.length - i - 1) * 0.1}s ease-in forwards, filled 0.3s 2s ease-out forwards;
+}`);
+}).join("\n\n"))
+*/
+
+#name path:nth-child(1) {
+    stroke-dasharray: 539.367431640625;
+    stroke-dashoffset: 539.367431640625;
+    animation: construct 1s 0.75s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+#name path:nth-child(2) {
+    stroke-dasharray: 474.6259765625;
+    stroke-dashoffset: 474.6259765625;
+    animation: construct 1s 0.6s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+#name path:nth-child(3) {
+    stroke-dasharray: 330.6259765625;
+    stroke-dashoffset: 330.6259765625;
+    animation: construct 1s 0.44999999999999996s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+#name path:nth-child(4) {
+    stroke-dasharray: 330.6260070800781;
+    stroke-dashoffset: 330.6260070800781;
+    animation: construct 1s 0.3s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+#name path:nth-child(5) {
+    stroke-dasharray: 51.34648895263672;
+    stroke-dashoffset: 51.34648895263672;
+    animation: construct 1s 0.15s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+#name path:nth-child(6) {
+    stroke-dasharray: 475.3102722167969;
+    stroke-dashoffset: 475.3102722167969;
+    animation: construct 1s 0s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+}
+
+@keyframes construct {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes filled {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+    }
+}
