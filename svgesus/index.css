@@ -7,7 +7,7 @@
 html {
     height: 100%;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     overscroll-behavior: none;
 
@@ -23,12 +23,60 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    perspective: 1000px;
+
+    width: 467px;
+    height: 96px;
+}
+
+.name-letter {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+}
+
+.name-letter:nth-child(1) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0.45s ease-out forwards;
+}
+
+.name-letter:nth-child(2) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0.15s ease-out forwards;
+}
+
+.name-letter:nth-child(3) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0.75s ease-out forwards;
+}
+
+.name-letter:nth-child(4) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0.3s ease-out forwards;
+}
+
+.name-letter:nth-child(5) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0.6s ease-out forwards;
+}
+
+.name-letter:nth-child(6) {
+    transform: translateZ(2000px);
+
+    animation: rest 2s 0s ease-out forwards;
 }
 
 /*
-console.log([...document.querySelectorAll("#name path")].map((e, i, a) => {
+console.log([...document.querySelectorAll(".name-letter path")].map((e, i, a) => {
     return (`
-#name path:nth-child(${i + 1}) {
+.name-letter path:nth-child(${i + 1}) {
     stroke-dasharray: ${e.getTotalLength()};
     stroke-dashoffset: ${e.getTotalLength()};
     animation: construct 1s ${(a.length - i - 1) * 0.1}s ease-in forwards, filled 0.3s 2s ease-out forwards;
@@ -36,40 +84,40 @@ console.log([...document.querySelectorAll("#name path")].map((e, i, a) => {
 }).join("\n\n"))
 */
 
-#name path:nth-child(1) {
+.name-letter path:nth-child(1) {
     stroke-dasharray: 539.367431640625;
     stroke-dashoffset: 539.367431640625;
-    animation: construct 1s 0.75s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+    animation: construct 2s 0.5s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
-#name path:nth-child(2) {
+.name-letter path:nth-child(2) {
     stroke-dasharray: 474.6259765625;
     stroke-dashoffset: 474.6259765625;
-    animation: construct 1s 0.6s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+    animation: construct 2s 0.4s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
-#name path:nth-child(3) {
+.name-letter path:nth-child(3) {
     stroke-dasharray: 330.6259765625;
     stroke-dashoffset: 330.6259765625;
-    animation: construct 1s 0.44999999999999996s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+    animation: construct 2s 0.3s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
-#name path:nth-child(4) {
+.name-letter path:nth-child(4) {
     stroke-dasharray: 330.6260070800781;
     stroke-dashoffset: 330.6260070800781;
-    animation: construct 1s 0.3s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+    animation: construct 2s 0.2s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
-#name path:nth-child(5) {
-    stroke-dasharray: 51.34648895263672;
-    stroke-dashoffset: 51.34648895263672;
-    animation: construct 1s 0.15s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+.name-letter path:nth-child(5) {
+    stroke-dasharray: 51.34647750854492;
+    stroke-dashoffset: 51.34647750854492;
+    animation: construct 2s 0.1s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
-#name path:nth-child(6) {
+.name-letter path:nth-child(6) {
     stroke-dasharray: 475.3102722167969;
     stroke-dashoffset: 475.3102722167969;
-    animation: construct 1s 0s ease-out forwards, filled 0.5s 1.75s ease-in forwards;
+    animation: construct 2s 0s ease-in forwards, filled 0.3s 2.75s ease-out forwards;
 }
 
 @keyframes construct {
@@ -85,5 +133,11 @@ console.log([...document.querySelectorAll("#name path")].map((e, i, a) => {
 
     to {
         fill: white;
+    }
+}
+
+@keyframes rest {
+    to {
+        transform: none;
     }
 }
